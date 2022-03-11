@@ -1,5 +1,6 @@
 
 import React, { useState,useEffect } from 'react';
+import { Navbar } from '../Navbar/Navbar';
 import { Songs } from '../Songs/Songs';
 import styled from "./Main.module.css";
 
@@ -20,8 +21,12 @@ export const Main = () => {
             setList(d);
           });
       };    
+   
+
 
   return (
+      <>
+    <Navbar />
     <div className={styled.container}>
         {
            list.map((ele,index) => {
@@ -32,6 +37,7 @@ export const Main = () => {
            }) 
         }
     </div>
+    </>
   )
 }
 

@@ -1,9 +1,22 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   gap: 2%;
   margin: auto;
   justify-content: space-between;
-  padding: 25px;
+  /* padding: 25px; */
+  padding: 5%;
+}
+
+@media only screen and (max-width: 1200px) {
+  /*Tablets [601px -> 1200px]*/
+}
+
+@media only screen and (max-width: 600px) {
+  /*Big smartphones [426px -> 600px]*/
+}
+
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
 }

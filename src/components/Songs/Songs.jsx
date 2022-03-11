@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import styled from "./Song.module.css";
 import { BsPlayFill } from "react-icons/bs";
 
@@ -9,11 +9,7 @@ export const Songs = ({data}) => {
 
     const handlePlay = (e) => {
         console.log("e=",e);
-        
     }
-
-
-
 
   return (
     <div className={styled.songs}>
@@ -22,9 +18,15 @@ export const Songs = ({data}) => {
             <div className={styled.playbtn} onClick={() => handlePlay(data)}>
                 <BsPlayFill className={styled.playimg}/>
             </div>
+          
             <div className={styled.text}>
                 <h3>{song}</h3>
                 <h4>{artists}</h4>
+            </div>
+            <div className={styled.audioplayer}>
+                <audio controls autoplay className={styled.audio}>
+                <source  src={url} type="audio/mpeg" />
+            </audio>
             </div>
         </div>
     </div>
