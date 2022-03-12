@@ -29,7 +29,7 @@ export const Main = () => {
       }
 const handleArtist=(name)=>
     {
-          let newP = data.filter((e)=>e.artists===name)
+          let newP = data.filter((e)=>e.song===name)
           console.log("dataeer",newP,name);
           if(newP.length === 0) {
             newP = data

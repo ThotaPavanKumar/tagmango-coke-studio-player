@@ -1,5 +1,5 @@
 .songs {
-  height: 330px;
+  height: 300px;
   width: 280px;
   margin: 15px;
 }
@@ -26,7 +26,7 @@
   text-align: center;
   margin: -19% 0px 5px 0px;
   color: white;
-  font-size: 15px;
+  font-size: 19px;
   height: 100px;
 }
 .playbtn {
