@@ -40,6 +40,7 @@
   position: relative;
   bottom: 17%;
   left: 75%;
+  cursor: pointer;
 }
 .playimg {
   color: white;
