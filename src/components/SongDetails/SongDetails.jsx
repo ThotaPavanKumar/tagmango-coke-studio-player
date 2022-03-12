@@ -5,15 +5,12 @@ import { BsPlayFill } from "react-icons/bs";
 
 export const SongDetails = () => {
     const [songs,setSongs] = useState("");
-    console.log("songs===",songs);
 
     useEffect(() => {
         const d = JSON.parse(localStorage.getItem("song"));
-        console.log("d",d)
         setSongs(d);
       }, []);
 
-      console.log(songs.url);
       return (
           <>
           {songs.url === undefined?"" :
