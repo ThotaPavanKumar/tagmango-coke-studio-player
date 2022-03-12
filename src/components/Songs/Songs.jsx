@@ -10,6 +10,7 @@ export const Songs = ({data}) => {
     const handlePlay = (e) => {
         console.log("e=",e);
     }
+    
 
   return (
     <div className={styled.songs}>

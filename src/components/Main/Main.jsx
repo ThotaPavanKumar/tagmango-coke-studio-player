@@ -7,6 +7,7 @@ import styled from "./Main.module.css";
 export const Main = () => {
 
     const [list,setList] = useState([]);
+    const [data,setData] = useState([]);
 
     useEffect(() => {
         handleMusic();
@@ -19,14 +20,27 @@ export const Main = () => {
           .then((res) => res.json())
           .then((d) => {
             setList(d);
+            setData(d);
           });
       };    
-   
-
+      const handleSearch = (data) => {
+        console.log("handle= ",data)
+          handleArtist(data);
+      }
+const handleArtist=(name)=>
+    {
+          let newP = data.filter((e)=>e.artists===name)
+          console.log("dataeer",newP,name);
+          if(newP.length === 0) {
+            newP = data
+          }
+          setList(newP)
+    }
 
   return (
       <>
-    <Navbar />
+    <Navbar handleSearch={handleSearch}/>
+
     <div className={styled.container}>
         {
            list.map((ele,index) => {

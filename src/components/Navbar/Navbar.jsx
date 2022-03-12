@@ -1,22 +1,29 @@
 import Input from "antd/lib/input/Input";
+import Button from "antd/lib/button/button"
 import React from "react";
 import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
-export const Navbar = () => {
+export const Navbar = ({handleSearch}) => {
+  const sendInput = () => {
+    let inp = document.getElementById("inp").value;
+    handleSearch(inp);
+}
+const home = () => {
+    window.location.href = "/";
+}
   return (
     <div className="navbar">
       <div className="logodiv">
-        <div>
-          {/* <Link to="/home"> */}
-            <img src={"https://i.ibb.co/ZJDxkjX/download.png"} alt="png" />
-          {/* </Link> */}
+        <div onClick={() => home()}>
+            <img src={"https://cdn.dribbble.com/users/891352/screenshots/2146790/svg_headphones.gif"} alt="png" />
         </div>
       </div>
 
       <div className="navbarInput">
-        <Input placeholder="Search your favourite song"></Input>
+        <Input placeholder="Search your favourite song" id="inp"></Input>
+        <Button onClick={sendInput}>Search</Button>
       </div>
 
       <div style={{ textDecoration: "none", fontSize: "20px" }}>
@@ -26,21 +33,4 @@ export const Navbar = () => {
   );
 };
 
-// const handleArtist=()=>
-//     {
-//         axios({
-//             method: 'get',
-//             url: `https://s3-ap-southeast-1.amazonaws.com/he-public-data/studiod9c0baf.json`,
-//             headers:{
-//                "Content-Type":"application/json"
-//             },
-//          })
-//          .then(function (response) {
-//           let newP=response.data.filter((e)=>e.artists===name)
-//           setData(newP)
-//           console.log(response.data)
-//           }).catch(e=>
-//               {
-//                   console.log(e)
-//               })
-//     }
+
